@@ -3,6 +3,13 @@ import { stripe } from "@/lib/stripe";
 
 export async function POST(request: NextRequest) {
   try {
+    if (!stripe) {
+      return NextResponse.json(
+        { error: "Stripe is not configured. Please set STRIPE_SECRET_KEY environment variable." },
+        { status: 500 }
+      );
+    }
+
     const body = await request.json();
     const { items, userEmail } = body;
 
