@@ -1,7 +1,4 @@
 {
-  "buildCommand": "next build",
-  "outputDirectory": ".next",
-  "env": {
-    "NEXT_PUBLIC_BASE_URL": "@next_public_base_url"
-  }
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next/standalone"
 }
