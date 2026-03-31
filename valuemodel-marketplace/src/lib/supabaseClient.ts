@@ -6,7 +6,7 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 // Temporarily disabled for testing - will be enabled when env variables are set
 export const supabase = supabaseUrl && supabaseKey 
   ? createClient(supabaseUrl, supabaseKey)
-  : (null as any);
+  : null;
 
 export interface Product {
   id: string;

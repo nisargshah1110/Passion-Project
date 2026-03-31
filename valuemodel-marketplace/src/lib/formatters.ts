@@ -17,3 +17,11 @@ export const formatDate = (date: Date) => {
 export const generateLicenseKey = () => {
   return `VALU-${Date.now()}-${Math.random().toString(36).substring(2, 10).toUpperCase()}`;
 };
+
+export const getErrorMessage = (error: unknown) => {
+  if (error instanceof Error) {
+    return error.message;
+  }
+
+  return "Unknown error";
+};

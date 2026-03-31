@@ -1,5 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getErrorMessage } from "@/lib/formatters";
 import { stripe } from "@/lib/stripe";
+
+type CheckoutItem = {
+  description?: string;
+  price: number;
+  quantity?: number;
+  title: string;
+};
+
+type CheckoutRequest = {
+  items?: CheckoutItem[];
+  userEmail?: string;
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,7 +23,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body = await request.json();
+    const body = (await request.json()) as CheckoutRequest;
     const { items, userEmail } = body;
 
     if (!items?.length || !userEmail) {
@@ -21,7 +34,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Mock line items for checkout
-    const lineItems = items.map((item: any) => ({
+    const lineItems = items.map((item) => ({
       price_data: {
         currency: "inr",
         unit_amount: Math.round(item.price * 100),
@@ -44,10 +57,10 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({ url: session.url });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Checkout error:", error);
     return NextResponse.json(
-      { error: error.message },
+      { error: getErrorMessage(error) },
       { status: 500 }
     );
   }

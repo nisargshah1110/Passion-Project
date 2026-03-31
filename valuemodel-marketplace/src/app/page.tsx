@@ -92,34 +92,19 @@ export default function Home() {
           <div className="rounded-lg border bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-800">
             <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
             <p className="mt-3 italic">
-              "The DCF model saved me hours. Clean formulas, easy to customize. Highly recommend for investment banking."
+              &ldquo;The DCF model saved me hours. Clean formulas, easy to customize. Highly recommend for investment banking.&rdquo;
             </p>
             <p className="mt-3 font-semibold">— Raj Patel, Goldman Sachs</p>
           </div>
           <div className="rounded-lg border bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-800">
             <div className="text-yellow-500">⭐⭐⭐⭐⭐</div>
             <p className="mt-3 italic">
-              "Perfect for startup valuations. TAM analysis and dilution tracking are spot-on. Worth every rupee!"
+              &ldquo;Perfect for startup valuations. TAM analysis and dilution tracking are spot-on. Worth every rupee!&rdquo;
             </p>
             <p className="mt-3 font-semibold">— Priya Singh, AngelList Syndicate</p>
           </div>
         </div>
       </section>
-    </div>
-  );
-}
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
     </div>
   );
 }
